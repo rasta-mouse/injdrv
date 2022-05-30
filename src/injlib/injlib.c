@@ -564,7 +564,7 @@ InjpQueueApc(
   // Allocate memory for the KAPC structure.
   //
 
-  PKAPC Apc = ExAllocatePoolWithTag(NonPagedPoolNx,
+  PKAPC Apc = ExAllocatePool2(NonPagedPoolNx,
                                     sizeof(KAPC),
                                     INJ_MEMORY_TAG);
 
@@ -997,7 +997,7 @@ InjCreateInjectionInfo(
   }
   else
   {
-    CapturedInjectionInfo = ExAllocatePoolWithTag(NonPagedPoolNx,
+    CapturedInjectionInfo = ExAllocatePool2(NonPagedPoolNx,
                                                   sizeof(INJ_INJECTION_INFO),
                                                   INJ_MEMORY_TAG);
 
